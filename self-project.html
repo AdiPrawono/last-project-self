@@ -1,0 +1,1730 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Studi Kasus Deteksi Ranjau Darat &#8212; My sample book</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=3ee479438cf8b5e0d341" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=3ee479438cf8b5e0d341" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=3ee479438cf8b5e0d341" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=3ee479438cf8b5e0d341" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=87e54e7c" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=3ee479438cf8b5e0d341" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=3ee479438cf8b5e0d341" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=3ee479438cf8b5e0d341"></script>
+
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'self-project';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Notebooks with MyST Markdown" href="markdown-notebooks.html" />
+    <link rel="prev" title="Content with notebooks" href="notebooks.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/logo.png" class="logo__image only-light" alt="My sample book - Home"/>
+    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="My sample book - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Welcome to your Jupyter Book
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="markdown.html">Markdown Files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="notebooks.html">Content with notebooks</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Studi Kasus Deteksi Ranjau Darat</a></li>
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="markdown-notebooks.html">Notebooks with MyST Markdown</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fself-project.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/self-project.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Studi Kasus Deteksi Ranjau Darat</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Studi Kasus Deteksi Ranjau Darat</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#tujuan-analisis">Tujuan Analisis</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#data-understanding">Data Understanding</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#deskripsi-data">Deskripsi Data</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#penjelasan-land-mines">Penjelasan Land Mines</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#menampilkan-data-dari-uci-dataset">Menampilkan data dari uci dataset</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#fitur">Fitur</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#penjelasan-class">Penjelasan Class</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#identifikasi-kualitas-data">Identifikasi kualitas data</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cek-missing-values">Cek Missing Values</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#identifikasi-outlier">Identifikasi Outlier</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#pre-processing-data">PRE-PROCESSING DATA</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#menghapus-data-outlier">Menghapus data outlier</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#modelling">Modelling</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#k-nearest-neighbor-knn">K-Nearest Neighbor (KNN)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gaussian-naive-bayes-classification">Gaussian Naive Bayes Classification</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#stacking-classifier">Stacking Classifier</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bagging-classifier">Bagging Classifier</a></li>
+</ul>
+</li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="studi-kasus-deteksi-ranjau-darat">
+    
+<a href="https://last-project-python-puqf95gf6vndngvctd7z2r.streamlit.app/"><h1>Link Aplikasi Prediksi</h1></a>
+<h1>Studi Kasus Deteksi Ranjau Darat<a class="headerlink" href="#studi-kasus-deteksi-ranjau-darat" title="Link to this heading">#</a></h1>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="tujuan-analisis">
+<h1>Tujuan Analisis<a class="headerlink" href="#tujuan-analisis" title="Link to this heading">#</a></h1>
+<p>Deteksi ranjau yang terkubur di dalam tanah sangat penting dalam hal keselamatan jiwa dan harta benda. Banyak metode yang berbeda telah digunakan dalam hal ini; namun, belum ada yang bisa mencapai keberhasilan 100%. Proses deteksi ranjau terdiri dari fase desain sensor, analisis data, dan algoritma keputusan. Metode anomali magnetik bekerja berdasarkan prinsip pengukuran anomali yang dihasilkan dari objek dalam medan magnet yang mengganggu strukturnya, medan magnet, dan data yang diperoleh pada saat ini digunakan untuk menentukan kondisi seperti gerakan dan posisi. Penentuan parameter seperti posisi, kedalaman atau arah gerak menggunakan anomali magnetik telah dilakukan sejak tahun 1970. Dari setiap faktor-faktor yang disebutkan diatas kita dapat memprediksi jenis dari ranjau darat yang di temukan yang terkubur dalam tanah.</p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="data-understanding">
+<h1>Data Understanding<a class="headerlink" href="#data-understanding" title="Link to this heading">#</a></h1>
+<section id="deskripsi-data">
+<h2>Deskripsi Data<a class="headerlink" href="#deskripsi-data" title="Link to this heading">#</a></h2>
+<section id="penjelasan-land-mines">
+<h3>Penjelasan Land Mines<a class="headerlink" href="#penjelasan-land-mines" title="Link to this heading">#</a></h3>
+<p>Ranjau darat adalah jenis senjata peledak yang ditanam di dalam tanah atau ditempatkan di permukaan tanah untuk tujuan militer atau pertahanan. Ranjau ini dirancang untuk meledak secara otomatis atau dengan bantuan pencetus ketika terpicu oleh tekanan, gerakan, atau perubahan dalam medan elektromagnetik.</p>
+<img src="_images/land-mines.webp" width="50%" align="" /><p>Karakteristik Ranjau Darat:</p>
+<ol class="arabic simple">
+<li><p>Fungsi Utama:</p></li>
+</ol>
+<ul class="simple">
+<li><p>Anti-Personnel: Dirancang untuk melukai atau membunuh personel infanteri.</p></li>
+</ul>
+<ul class="simple">
+<li><p>Anti-Tank: Dirancang untuk merusak atau menghancurkan kendaraan lapis baja seperti tank.</p></li>
+</ul>
+<ul class="simple">
+<li><p>Booby Trapped: Ditanam dengan perangkap untuk memicu ledakan yang tidak terduga.</p></li>
+</ul>
+<ol class="arabic simple" start="2">
+<li><p>Konstruksi:</p></li>
+</ol>
+<ul class="simple">
+<li><p>Badan: Biasanya terbuat dari logam atau plastik, tergantung pada jenisnya.</p></li>
+</ul>
+<ul class="simple">
+<li><p>Muatan Peledak: Memiliki muatan peledak yang dirancang untuk menimbulkan kerusakan yang signifikan terhadap sasaran yang diinginkan.</p></li>
+</ul>
+<ul class="simple">
+<li><p>Pencetus: Dapat diaktifkan oleh tekanan, gerakan, atau medan magnetik.</p></li>
+</ul>
+<ol class="arabic simple" start="3">
+<li><p>Penggunaan:</p></li>
+</ol>
+<ul class="simple">
+<li><p>Digunakan di medan pertempuran untuk menghalangi gerakan musuh.</p></li>
+</ul>
+<ul class="simple">
+<li><p>Menjadi ancaman serius bagi personel militer dan sipil setelah konflik berakhir.</p></li>
+</ul>
+<ol class="arabic simple" start="4">
+<li><p>Bahaya dan Dampak:</p></li>
+</ol>
+<ul class="simple">
+<li><p>Sering kali tetap aktif dalam waktu yang lama setelah konflik berakhir.</p></li>
+</ul>
+<ul class="simple">
+<li><p>Menyebabkan cedera serius atau kematian pada orang yang tidak berhubungan dengan konflik.</p></li>
+</ul>
+<ol class="arabic simple" start="5">
+<li><p>Penanganan:</p></li>
+</ol>
+<ul class="simple">
+<li><p>Memerlukan pendekatan yang hati-hati dalam deteksi, deaktivasi, dan penghapusan.</p></li>
+</ul>
+<ul class="simple">
+<li><p>Proses ini sering dilakukan oleh tim khusus dengan peralatan yang tepat untuk mengurangi risiko ledakan tidak terkendali.</p></li>
+</ul>
+<p>Ranjau darat telah digunakan secara luas dalam konflik militer di seluruh dunia, menyebabkan dampak kemanusiaan yang serius dan menjadi tantangan besar dalam upaya pembersihan setelah konflik berakhir.</p>
+<p>Fitur yang ada pada dataset ini:</p>
+<ul class="simple">
+<li><p>Voltage (V)</p></li>
+</ul>
+<ul class="simple">
+<li><p>High (H)</p></li>
+</ul>
+<ul class="simple">
+<li><p>Soil Type (S)</p></li>
+</ul>
+<ul class="simple">
+<li><p>Mine Type (M)</p></li>
+</ul>
+<p>Dataset ini memiliki 3 fitur dan 1 target atau class yaitu Mine Type (M)</p>
+</section>
+<section id="menampilkan-data-dari-uci-dataset">
+<h3>Menampilkan data dari uci dataset<a class="headerlink" href="#menampilkan-data-dari-uci-dataset" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">ucimlrepo</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting ucimlrepo
+  Downloading ucimlrepo-0.0.7-py3-none-any.whl.metadata (5.5 kB)
+Requirement already satisfied: pandas&gt;=1.0.0 in c:\users\xdak21\appdata\local\programs\python\python312\lib\site-packages (from ucimlrepo) (2.2.2)
+Requirement already satisfied: certifi&gt;=2020.12.5 in c:\users\xdak21\appdata\local\programs\python\python312\lib\site-packages (from ucimlrepo) (2024.6.2)
+Requirement already satisfied: numpy&gt;=1.26.0 in c:\users\xdak21\appdata\local\programs\python\python312\lib\site-packages (from pandas&gt;=1.0.0-&gt;ucimlrepo) (2.0.0)
+Requirement already satisfied: python-dateutil&gt;=2.8.2 in c:\users\xdak21\appdata\local\programs\python\python312\lib\site-packages (from pandas&gt;=1.0.0-&gt;ucimlrepo) (2.9.0.post0)
+Requirement already satisfied: pytz&gt;=2020.1 in c:\users\xdak21\appdata\local\programs\python\python312\lib\site-packages (from pandas&gt;=1.0.0-&gt;ucimlrepo) (2024.1)
+Requirement already satisfied: tzdata&gt;=2022.7 in c:\users\xdak21\appdata\local\programs\python\python312\lib\site-packages (from pandas&gt;=1.0.0-&gt;ucimlrepo) (2024.1)
+Requirement already satisfied: six&gt;=1.5 in c:\users\xdak21\appdata\local\programs\python\python312\lib\site-packages (from python-dateutil&gt;=2.8.2-&gt;pandas&gt;=1.0.0-&gt;ucimlrepo) (1.16.0)
+Downloading ucimlrepo-0.0.7-py3-none-any.whl (8.0 kB)
+Installing collected packages: ucimlrepo
+Successfully installed ucimlrepo-0.0.7
+Note: you may need to restart the kernel to use updated packages.
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">=</span><span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;https://archive.ics.uci.edu/static/public/763/data.csv&#39;</span><span class="p">)</span>
+<span class="n">df</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>V</th>
+      <th>H</th>
+      <th>S</th>
+      <th>M</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>0.338157</td>
+      <td>0.000000</td>
+      <td>0.0</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>0.320241</td>
+      <td>0.181818</td>
+      <td>0.0</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>0.287009</td>
+      <td>0.272727</td>
+      <td>0.0</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>0.256284</td>
+      <td>0.454545</td>
+      <td>0.0</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>0.262840</td>
+      <td>0.545455</td>
+      <td>0.0</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>333</th>
+      <td>0.323262</td>
+      <td>0.909091</td>
+      <td>0.4</td>
+      <td>5</td>
+    </tr>
+    <tr>
+      <th>334</th>
+      <td>0.444108</td>
+      <td>0.181818</td>
+      <td>1.0</td>
+      <td>5</td>
+    </tr>
+    <tr>
+      <th>335</th>
+      <td>0.353474</td>
+      <td>0.454545</td>
+      <td>1.0</td>
+      <td>5</td>
+    </tr>
+    <tr>
+      <th>336</th>
+      <td>0.362537</td>
+      <td>0.727273</td>
+      <td>1.0</td>
+      <td>5</td>
+    </tr>
+    <tr>
+      <th>337</th>
+      <td>0.314199</td>
+      <td>1.000000</td>
+      <td>1.0</td>
+      <td>5</td>
+    </tr>
+  </tbody>
+</table>
+<p>338 rows × 4 columns</p>
+</div></div></div>
+</div>
+</section>
+<section id="fitur">
+<h3>Fitur<a class="headerlink" href="#fitur" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
+RangeIndex: 338 entries, 0 to 337
+Data columns (total 4 columns):
+ #   Column  Non-Null Count  Dtype  
+---  ------  --------------  -----  
+ 0   V       338 non-null    float64
+ 1   H       338 non-null    float64
+ 2   S       338 non-null    float64
+ 3   M       338 non-null    int64  
+dtypes: float64(3), int64(1)
+memory usage: 10.7 KB
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>Voltage (V) : Nilai tegangan keluaran dari sensor FLC akibat distorsi magnetik.</p></li>
+</ul>
+<ul class="simple">
+<li><p>High (H) : Ketinggian sensor dari permukaan tanah.</p></li>
+</ul>
+<ul class="simple">
+<li><p>Soil Type (S) : 6 jenis tanah yang berbeda tergantung pada kondisi kelembapan.</p></li>
+</ul>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>                         1. Kering dan berpasir
+</pre></div>
+</div>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>                         2. Kering dan Humus
+</pre></div>
+</div>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>                         3. Kering dan Berkapur
+</pre></div>
+</div>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>                         4. Lembab dan Berpasir
+</pre></div>
+</div>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>                         5. Lembab dan Humus
+</pre></div>
+</div>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>                         6. Lembab dan Berkapur
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Mine Type(M) : Jenis ranjau yang umum ditemukan di darat. Terdiri dari 5 kelas ranjau yang berbeda:</p></li>
+</ul>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>                          1. Null : Tidak ada ranjau
+</pre></div>
+</div>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>                          2. Anti-tank
+</pre></div>
+</div>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>                          3. Anti-personnel
+</pre></div>
+</div>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>                          4. Booby Trapped Anti-personnel
+</pre></div>
+</div>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>                          5. M14 Anti-personnel
+</pre></div>
+</div>
+</section>
+<section id="penjelasan-class">
+<h3>Penjelasan Class<a class="headerlink" href="#penjelasan-class" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">value_counts</span><span class="p">(</span><span class="s1">&#39;M&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>M
+1    71
+2    70
+3    66
+4    66
+5    65
+Name: count, dtype: int64
+</pre></div>
+</div>
+</div>
+</div>
+<p>Hasil diatas merupakan jenis class yang ada di Mine Type dan jumlah dari setiap class tersebut. Bisa di simpulkan jika jenis class yang ada, yaitu antara 1 sampai 5 yang sudah di jelaskan di bab sebelumnya.</p>
+</section>
+</section>
+<section id="identifikasi-kualitas-data">
+<h2>Identifikasi kualitas data<a class="headerlink" href="#identifikasi-kualitas-data" title="Link to this heading">#</a></h2>
+<section id="cek-missing-values">
+<h3>Cek Missing Values<a class="headerlink" href="#cek-missing-values" title="Link to this heading">#</a></h3>
+<p>Untuk mengetahui kualitas dari dataset yang kita gunakan kita perlu melakukan pengecekan missing values, ini membantu kita dalam melakukan analisis dan model prediksi nantinya. Apa bila dataset yang digunakan tidak memiliki missing values maka akurasi dari prediksi analisis data akan semakin akurat.</p>
+<p>Ada beberapa metode penanganan missing values, yaitu:</p>
+<ol class="arabic simple">
+<li><p>Inputasi missing values:</p></li>
+</ol>
+<p>Inputasi missing values bisa menggunakan nilai rata-rata, median, modus, atau menggunakan metode yang lebih canggih seperti imputasi berbasis regresi atau machine learning.</p>
+<ol class="arabic simple" start="2">
+<li><p>Penghapusan data:</p></li>
+</ol>
+<p>langkah selanjutnya yang dapat dilakukan dalam penanganan missing values adalah menghapus data yang mengandung missing values. Metode ini bisa dilakukan apabila missing values yang ada relatif kecil dibandingkan dengan ukuran dataset.</p>
+<p>Untuk melakukan pengecekan missing values bisa menggunakan code dibawah ini:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">isnull</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>V    0
+H    0
+S    0
+M    0
+dtype: int64
+</pre></div>
+</div>
+</div>
+</div>
+<p>dari hasil pengecekan diatas kita bisa lihat bahwa dataset yang kita gunakan tidak memiliki missing values maka tidak diperlukannya penanganan missing values.</p>
+</section>
+<section id="identifikasi-outlier">
+<h3>Identifikasi Outlier<a class="headerlink" href="#identifikasi-outlier" title="Link to this heading">#</a></h3>
+<p>Outlier adalah titik data yang secara signifikan berbeda dari mayoritas data dalam satu set. Mereka bisa sangat tinggi atau sangat rendah dibandingkan dengan nilai lainnya. Outlier dapat terjadi karena variabilitas alami, kesalahan pengukuran, atau kondisi ekstrim. Identifikasi outlier penting karena mereka dapat mempengaruhi analisis data dan model prediktif, serta memberikan wawasan atau mengindikasikan masalah dalam data.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.neighbors</span> <span class="kn">import</span> <span class="n">LocalOutlierFactor</span>
+
+<span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;https://archive.ics.uci.edu/static/public/763/data.csv&#39;</span><span class="p">)</span>
+
+<span class="c1"># simpan class risklevel</span>
+<span class="n">landmines</span> <span class="o">=</span> <span class="n">df</span><span class="p">[[</span><span class="s1">&#39;M&#39;</span><span class="p">]]</span>
+
+<span class="c1"># #hapus kolom yang tidak diperlukan</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">drop</span><span class="p">([</span><span class="s1">&#39;M&#39;</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="c1"># # Inisialisasi dan fit model LOF</span>
+<span class="n">lof</span> <span class="o">=</span> <span class="n">LocalOutlierFactor</span><span class="p">(</span><span class="n">n_neighbors</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">contamination</span><span class="o">=</span><span class="mf">0.4</span><span class="p">)</span>
+<span class="n">outlier_labels</span> <span class="o">=</span> <span class="n">lof</span><span class="o">.</span><span class="n">fit_predict</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+
+<span class="c1"># # Tambahkan label outlier dan M ke dataframe</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;Outlier&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">outlier_labels</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;M&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">landmines</span>
+<span class="n">outliers</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Outlier&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">head</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Jumlah outlier yang terdeteksi: </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">outliers</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="n">df</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>          V         H    S  M
+0  0.338157  0.000000  0.0  1
+1  0.320241  0.181818  0.0  1
+2  0.287009  0.272727  0.0  1
+3  0.256284  0.454545  0.0  1
+4  0.262840  0.545455  0.0  1
+Jumlah outlier yang terdeteksi: 135
+</pre></div>
+</div>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>V</th>
+      <th>H</th>
+      <th>S</th>
+      <th>Outlier</th>
+      <th>M</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>0.338157</td>
+      <td>0.000000</td>
+      <td>0.0</td>
+      <td>-1</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>0.320241</td>
+      <td>0.181818</td>
+      <td>0.0</td>
+      <td>1</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>0.287009</td>
+      <td>0.272727</td>
+      <td>0.0</td>
+      <td>1</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>0.256284</td>
+      <td>0.454545</td>
+      <td>0.0</td>
+      <td>1</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>0.262840</td>
+      <td>0.545455</td>
+      <td>0.0</td>
+      <td>1</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>333</th>
+      <td>0.323262</td>
+      <td>0.909091</td>
+      <td>0.4</td>
+      <td>1</td>
+      <td>5</td>
+    </tr>
+    <tr>
+      <th>334</th>
+      <td>0.444108</td>
+      <td>0.181818</td>
+      <td>1.0</td>
+      <td>-1</td>
+      <td>5</td>
+    </tr>
+    <tr>
+      <th>335</th>
+      <td>0.353474</td>
+      <td>0.454545</td>
+      <td>1.0</td>
+      <td>1</td>
+      <td>5</td>
+    </tr>
+    <tr>
+      <th>336</th>
+      <td>0.362537</td>
+      <td>0.727273</td>
+      <td>1.0</td>
+      <td>1</td>
+      <td>5</td>
+    </tr>
+    <tr>
+      <th>337</th>
+      <td>0.314199</td>
+      <td>1.000000</td>
+      <td>1.0</td>
+      <td>1</td>
+      <td>5</td>
+    </tr>
+  </tbody>
+</table>
+<p>338 rows × 5 columns</p>
+</div></div></div>
+</div>
+<p>Dari hasil pengecekan diatas bisa kita lihat bahwa terdapat data yang merupakan outlier atau nilai yang jaraknya jauh. Dari hasil diatas terdapat 34 jumlah data yang termasuk kedalam outlier. Untuk menangani data outlier kita bisa menggunakan beberapa metode namun yang akan kita lakukan dalam data ini yaitu menghapus data tersebut.</p>
+</section>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="pre-processing-data">
+<h1>PRE-PROCESSING DATA<a class="headerlink" href="#pre-processing-data" title="Link to this heading">#</a></h1>
+<section id="menghapus-data-outlier">
+<h2>Menghapus data outlier<a class="headerlink" href="#menghapus-data-outlier" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">from</span> <span class="nn">sklearn.neighbors</span> <span class="kn">import</span> <span class="n">LocalOutlierFactor</span>
+
+<span class="c1"># Membaca dataset</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;https://archive.ics.uci.edu/static/public/763/data.csv&#39;</span><span class="p">)</span>
+
+<span class="c1"># Menampilkan 5 baris pertama dataset</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">head</span><span class="p">())</span>
+
+<span class="c1"># Memilih fitur yang akan digunakan untuk deteksi outlier</span>
+<span class="n">features</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;V&#39;</span><span class="p">,</span> <span class="s1">&#39;H&#39;</span><span class="p">,</span> <span class="s1">&#39;S&#39;</span><span class="p">]</span>
+
+<span class="c1"># Mengekstraksi fitur dari dataset</span>
+<span class="n">X</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="n">features</span><span class="p">]</span>
+
+<span class="c1"># Membuat model LOF (Local Outlier Factor)</span>
+<span class="n">lof</span> <span class="o">=</span> <span class="n">LocalOutlierFactor</span><span class="p">(</span><span class="n">n_neighbors</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">contamination</span><span class="o">=</span><span class="mf">0.1</span><span class="p">)</span>
+
+<span class="c1"># Menerapkan LOF untuk mendeteksi outlier</span>
+<span class="n">data</span><span class="p">[</span><span class="s1">&#39;LOF_Score&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">lof</span><span class="o">.</span><span class="n">fit_predict</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
+<span class="n">data</span><span class="p">[</span><span class="s1">&#39;LOF&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">lof</span><span class="o">.</span><span class="n">negative_outlier_factor_</span>
+
+<span class="c1"># Menampilkan outlier</span>
+<span class="n">outliers</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;LOF_Score&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Jumlah outlier yang terdeteksi: </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">outliers</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">outliers</span><span class="p">)</span>
+
+<span class="c1"># Menghapus baris yang mengandung outlier</span>
+<span class="n">data_cleaned</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;LOF_Score&#39;</span><span class="p">]</span> <span class="o">!=</span> <span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+
+<span class="c1"># Menghapus kolom LOF_Score dan LOF dari data yang telah dibersihkan</span>
+<span class="n">data_cleaned</span> <span class="o">=</span> <span class="n">data_cleaned</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;LOF_Score&#39;</span><span class="p">,</span> <span class="s1">&#39;LOF&#39;</span><span class="p">])</span>
+
+<span class="c1"># Menampilkan data setelah outlier dihapus</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Jumlah data setelah outlier dihapus: </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">data_cleaned</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">data_cleaned</span><span class="o">.</span><span class="n">head</span><span class="p">())</span>
+
+<span class="c1"># Visualisasi data setelah outlier dihapus</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">data_cleaned</span><span class="p">[</span><span class="s1">&#39;V&#39;</span><span class="p">],</span> <span class="n">data_cleaned</span><span class="p">[</span><span class="s1">&#39;H&#39;</span><span class="p">],</span> <span class="n">c</span><span class="o">=</span><span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Data Normal&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;V&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;H&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>          V         H    S  M
+0  0.338157  0.000000  0.0  1
+1  0.320241  0.181818  0.0  1
+2  0.287009  0.272727  0.0  1
+3  0.256284  0.454545  0.0  1
+4  0.262840  0.545455  0.0  1
+Jumlah outlier yang terdeteksi: 34
+            V         H    S  M  LOF_Score       LOF
+16   0.315347  0.000000  0.2  1         -1 -1.429608
+21   0.259818  0.727273  0.2  1         -1 -1.274453
+40   0.338368  0.000000  1.0  1         -1 -1.294971
+41   0.295015  0.181818  1.0  1         -1 -1.204321
+42   0.271994  0.272727  1.0  1         -1 -1.243280
+51   0.658609  0.545455  0.0  2         -1 -1.442028
+52   0.610271  0.636364  0.0  2         -1 -1.732164
+59   0.655588  0.545455  0.6  2         -1 -1.508755
+60   0.628398  0.636364  0.6  2         -1 -1.283723
+61   0.504531  0.818182  0.6  2         -1 -1.206000
+63   0.719032  0.000000  0.2  2         -1 -1.345600
+64   0.622356  0.090909  0.2  2         -1 -1.302456
+75   0.495256  0.727273  0.8  2         -1 -1.289198
+76   0.468277  0.818182  0.8  2         -1 -1.203873
+77   0.467341  1.000000  0.8  2         -1 -1.562623
+84   0.628398  0.818182  0.4  2         -1 -1.292208
+85   0.549848  1.000000  0.4  2         -1 -1.676360
+91   0.507552  0.727273  1.0  2         -1 -1.512321
+92   0.549848  0.818182  1.0  2         -1 -1.537918
+93   0.444108  1.000000  1.0  2         -1 -1.311317
+116  0.574017  0.000000  0.8  3         -1 -1.288194
+124  0.664652  0.181818  0.4  3         -1 -1.270175
+132  0.586102  0.272727  1.0  3         -1 -1.302885
+166  0.197734  0.818182  0.8  4         -1 -1.280729
+174  0.592144  0.000000  1.0  4         -1 -1.303277
+182  0.583081  0.000000  0.0  5         -1 -1.417929
+233  0.296586  0.090909  0.2  1         -1 -1.250906
+245  0.290030  0.090909  1.0  1         -1 -1.281844
+251  0.586102  0.727273  0.0  2         -1 -1.467056
+255  0.534743  0.727273  0.6  2         -1 -1.410621
+263  0.483383  0.909091  0.8  2         -1 -1.317467
+267  0.592144  0.909091  0.4  2         -1 -1.591065
+271  0.444108  0.909091  1.0  2         -1 -1.262846
+291  0.522658  0.363636  1.0  3         -1 -1.201259
+Jumlah data setelah outlier dihapus: 304
+          V         H    S  M
+0  0.338157  0.000000  0.0  1
+1  0.320241  0.181818  0.0  1
+2  0.287009  0.272727  0.0  1
+3  0.256284  0.454545  0.0  1
+4  0.262840  0.545455  0.0  1
+</pre></div>
+</div>
+<img alt="_images/6e577ee57172abd1f692c1470e5f6eca852e0f6f18685234e05b40bd488b5b60.png" src="_images/6e577ee57172abd1f692c1470e5f6eca852e0f6f18685234e05b40bd488b5b60.png" />
+</div>
+</div>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="modelling">
+<h1>Modelling<a class="headerlink" href="#modelling" title="Link to this heading">#</a></h1>
+<section id="k-nearest-neighbor-knn">
+<h2>K-Nearest Neighbor (KNN)<a class="headerlink" href="#k-nearest-neighbor-knn" title="Link to this heading">#</a></h2>
+<p>K-Nearest Neighbors (KNN) adalah model pembelajaran mesin terawasi yang dapat digunakan untuk tugas regresi dan klasifikasi. Algoritme ini bersifat non-parametrik, artinya tidak membuat asumsi apa pun tentang distribusi data yang mendasarinya.</p>
+<p>Algoritma KNN memprediksi label kumpulan data pengujian dengan melihat label tetangga terdekatnya di ruang fitur kumpulan data pelatihan. “K” adalah hyperparameter terpenting yang dapat disesuaikan untuk mengoptimalkan performa model.</p>
+<p>KNN adalah algoritma sederhana dan intuitif yang memberikan hasil yang baik untuk berbagai masalah klasifikasi. Mudah diterapkan dan dipahami, serta dapat diterapkan pada kumpulan data kecil dan besar. Namun, hal ini juga memiliki beberapa kekurangan, dan kelemahan utamanya adalah biaya komputasinya mahal untuk kumpulan data besar atau ruang fitur berdimensi tinggi.</p>
+<p>Algoritma KNN digunakan dalam mesin rekomendasi e-commerce, pengenalan gambar, deteksi penipuan, klasifikasi teks, deteksi anomali, dan masih banyak lagi. Dalam tutorial ini, kita akan menggunakan algoritma KNN untuk sistem persetujuan pinjaman</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">train_test_split</span>
+<span class="kn">from</span> <span class="nn">sklearn.neighbors</span> <span class="kn">import</span> <span class="n">KNeighborsClassifier</span>
+<span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">accuracy_score</span>
+<span class="kn">from</span> <span class="nn">sklearn.preprocessing</span> <span class="kn">import</span> <span class="n">StandardScaler</span>
+
+<span class="n">df</span><span class="o">=</span><span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;data-cleaned.csv&#39;</span><span class="p">)</span>
+
+<span class="n">x</span> <span class="o">=</span> <span class="n">df</span><span class="p">[[</span><span class="s1">&#39;V&#39;</span><span class="p">,</span> <span class="s1">&#39;H&#39;</span><span class="p">,</span> <span class="s1">&#39;S&#39;</span><span class="p">]]</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;M&#39;</span><span class="p">]</span>
+
+<span class="n">x_train</span><span class="p">,</span> <span class="n">x_test</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_test</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">test_size</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">50</span><span class="p">)</span>
+
+<span class="n">knn</span> <span class="o">=</span> <span class="n">KNeighborsClassifier</span><span class="p">(</span><span class="n">n_neighbors</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+<span class="n">knn</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">x_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
+<span class="n">y_pred</span> <span class="o">=</span> <span class="n">knn</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">x_test</span><span class="p">)</span>
+<span class="n">accuracy</span> <span class="o">=</span> <span class="n">accuracy_score</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Accuracy: </span><span class="si">{</span><span class="n">accuracy</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="c1"># df</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">FileNotFoundError</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">9</span><span class="p">],</span> <span class="n">line</span> <span class="mi">7</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">accuracy_score</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="kn">from</span> <span class="nn">sklearn.preprocessing</span> <span class="kn">import</span> <span class="n">StandardScaler</span>
+<span class="ne">----&gt; </span><span class="mi">7</span> <span class="n">df</span><span class="o">=</span><span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;data-cleaned.csv&#39;</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">9</span> <span class="n">x</span> <span class="o">=</span> <span class="n">df</span><span class="p">[[</span><span class="s1">&#39;V&#39;</span><span class="p">,</span> <span class="s1">&#39;H&#39;</span><span class="p">,</span> <span class="s1">&#39;S&#39;</span><span class="p">]]</span>
+<span class="g g-Whitespace">     </span><span class="mi">10</span> <span class="n">y</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;M&#39;</span><span class="p">]</span>
+
+<span class="nn">File ~\AppData\Local\Programs\Python\Python312\Lib\site-packages\pandas\io\parsers\readers.py:1026,</span> in <span class="ni">read_csv</span><span class="nt">(filepath_or_buffer, sep, delimiter, header, names, index_col, usecols, dtype, engine, converters, true_values, false_values, skipinitialspace, skiprows, skipfooter, nrows, na_values, keep_default_na, na_filter, verbose, skip_blank_lines, parse_dates, infer_datetime_format, keep_date_col, date_parser, date_format, dayfirst, cache_dates, iterator, chunksize, compression, thousands, decimal, lineterminator, quotechar, quoting, doublequote, escapechar, comment, encoding, encoding_errors, dialect, on_bad_lines, delim_whitespace, low_memory, memory_map, float_precision, storage_options, dtype_backend)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1013</span> <span class="n">kwds_defaults</span> <span class="o">=</span> <span class="n">_refine_defaults_read</span><span class="p">(</span>
+<span class="g g-Whitespace">   </span><span class="mi">1014</span>     <span class="n">dialect</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1015</span>     <span class="n">delimiter</span><span class="p">,</span>
+   <span class="p">(</span><span class="o">...</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1022</span>     <span class="n">dtype_backend</span><span class="o">=</span><span class="n">dtype_backend</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1023</span> <span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1024</span> <span class="n">kwds</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">kwds_defaults</span><span class="p">)</span>
+<span class="ne">-&gt; </span><span class="mi">1026</span> <span class="k">return</span> <span class="n">_read</span><span class="p">(</span><span class="n">filepath_or_buffer</span><span class="p">,</span> <span class="n">kwds</span><span class="p">)</span>
+
+<span class="nn">File ~\AppData\Local\Programs\Python\Python312\Lib\site-packages\pandas\io\parsers\readers.py:620,</span> in <span class="ni">_read</span><span class="nt">(filepath_or_buffer, kwds)</span>
+<span class="g g-Whitespace">    </span><span class="mi">617</span> <span class="n">_validate_names</span><span class="p">(</span><span class="n">kwds</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;names&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">))</span>
+<span class="g g-Whitespace">    </span><span class="mi">619</span> <span class="c1"># Create the parser.</span>
+<span class="ne">--&gt; </span><span class="mi">620</span> <span class="n">parser</span> <span class="o">=</span> <span class="n">TextFileReader</span><span class="p">(</span><span class="n">filepath_or_buffer</span><span class="p">,</span> <span class="o">**</span><span class="n">kwds</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">622</span> <span class="k">if</span> <span class="n">chunksize</span> <span class="ow">or</span> <span class="n">iterator</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">623</span>     <span class="k">return</span> <span class="n">parser</span>
+
+<span class="nn">File ~\AppData\Local\Programs\Python\Python312\Lib\site-packages\pandas\io\parsers\readers.py:1620,</span> in <span class="ni">TextFileReader.__init__</span><span class="nt">(self, f, engine, **kwds)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1617</span>     <span class="bp">self</span><span class="o">.</span><span class="n">options</span><span class="p">[</span><span class="s2">&quot;has_index_names&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">kwds</span><span class="p">[</span><span class="s2">&quot;has_index_names&quot;</span><span class="p">]</span>
+<span class="g g-Whitespace">   </span><span class="mi">1619</span> <span class="bp">self</span><span class="o">.</span><span class="n">handles</span><span class="p">:</span> <span class="n">IOHandles</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span>
+<span class="ne">-&gt; </span><span class="mi">1620</span> <span class="bp">self</span><span class="o">.</span><span class="n">_engine</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_make_engine</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">engine</span><span class="p">)</span>
+
+<span class="nn">File ~\AppData\Local\Programs\Python\Python312\Lib\site-packages\pandas\io\parsers\readers.py:1880,</span> in <span class="ni">TextFileReader._make_engine</span><span class="nt">(self, f, engine)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1878</span>     <span class="k">if</span> <span class="s2">&quot;b&quot;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">mode</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">1879</span>         <span class="n">mode</span> <span class="o">+=</span> <span class="s2">&quot;b&quot;</span>
+<span class="ne">-&gt; </span><span class="mi">1880</span> <span class="bp">self</span><span class="o">.</span><span class="n">handles</span> <span class="o">=</span> <span class="n">get_handle</span><span class="p">(</span>
+<span class="g g-Whitespace">   </span><span class="mi">1881</span>     <span class="n">f</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1882</span>     <span class="n">mode</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1883</span>     <span class="n">encoding</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;encoding&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">),</span>
+<span class="g g-Whitespace">   </span><span class="mi">1884</span>     <span class="n">compression</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;compression&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">),</span>
+<span class="g g-Whitespace">   </span><span class="mi">1885</span>     <span class="n">memory_map</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;memory_map&quot;</span><span class="p">,</span> <span class="kc">False</span><span class="p">),</span>
+<span class="g g-Whitespace">   </span><span class="mi">1886</span>     <span class="n">is_text</span><span class="o">=</span><span class="n">is_text</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1887</span>     <span class="n">errors</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;encoding_errors&quot;</span><span class="p">,</span> <span class="s2">&quot;strict&quot;</span><span class="p">),</span>
+<span class="g g-Whitespace">   </span><span class="mi">1888</span>     <span class="n">storage_options</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;storage_options&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">),</span>
+<span class="g g-Whitespace">   </span><span class="mi">1889</span> <span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1890</span> <span class="k">assert</span> <span class="bp">self</span><span class="o">.</span><span class="n">handles</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span>
+<span class="g g-Whitespace">   </span><span class="mi">1891</span> <span class="n">f</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">handles</span><span class="o">.</span><span class="n">handle</span>
+
+<span class="nn">File ~\AppData\Local\Programs\Python\Python312\Lib\site-packages\pandas\io\common.py:873,</span> in <span class="ni">get_handle</span><span class="nt">(path_or_buf, mode, encoding, compression, memory_map, is_text, errors, storage_options)</span>
+<span class="g g-Whitespace">    </span><span class="mi">868</span> <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">handle</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
+<span class="g g-Whitespace">    </span><span class="mi">869</span>     <span class="c1"># Check whether the filename is to be opened in binary mode.</span>
+<span class="g g-Whitespace">    </span><span class="mi">870</span>     <span class="c1"># Binary mode does not support &#39;encoding&#39; and &#39;newline&#39;.</span>
+<span class="g g-Whitespace">    </span><span class="mi">871</span>     <span class="k">if</span> <span class="n">ioargs</span><span class="o">.</span><span class="n">encoding</span> <span class="ow">and</span> <span class="s2">&quot;b&quot;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">ioargs</span><span class="o">.</span><span class="n">mode</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">872</span>         <span class="c1"># Encoding</span>
+<span class="ne">--&gt; </span><span class="mi">873</span>         <span class="n">handle</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">874</span>             <span class="n">handle</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">875</span>             <span class="n">ioargs</span><span class="o">.</span><span class="n">mode</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">876</span>             <span class="n">encoding</span><span class="o">=</span><span class="n">ioargs</span><span class="o">.</span><span class="n">encoding</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">877</span>             <span class="n">errors</span><span class="o">=</span><span class="n">errors</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">878</span>             <span class="n">newline</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">879</span>         <span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">880</span>     <span class="k">else</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">881</span>         <span class="c1"># Binary mode</span>
+<span class="g g-Whitespace">    </span><span class="mi">882</span>         <span class="n">handle</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">handle</span><span class="p">,</span> <span class="n">ioargs</span><span class="o">.</span><span class="n">mode</span><span class="p">)</span>
+
+<span class="ne">FileNotFoundError</span>: [Errno 2] No such file or directory: &#39;data-cleaned.csv&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">=</span><span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;data-cleaned.csv&#39;</span><span class="p">)</span>
+
+<span class="n">x</span> <span class="o">=</span> <span class="n">df</span><span class="p">[[</span><span class="s1">&#39;V&#39;</span><span class="p">,</span> <span class="s1">&#39;H&#39;</span><span class="p">,</span> <span class="s1">&#39;S&#39;</span><span class="p">]]</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;M&#39;</span><span class="p">]</span>
+
+<span class="n">x_train</span><span class="p">,</span> <span class="n">x_test</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_test</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">test_size</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">50</span><span class="p">)</span>
+
+<span class="c1"># Melatih model KNN</span>
+<span class="n">knn</span> <span class="o">=</span> <span class="n">KNeighborsClassifier</span><span class="p">(</span><span class="n">n_neighbors</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+<span class="n">knn</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">x_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
+
+<span class="c1"># Menghitung akurasi model pada data uji</span>
+<span class="n">y_test_pred</span> <span class="o">=</span> <span class="n">knn</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">x_test</span><span class="p">)</span>
+<span class="n">accuracy</span> <span class="o">=</span> <span class="n">accuracy_score</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_test_pred</span><span class="p">)</span>
+
+<span class="c1"># Membuat data baru untuk prediksi</span>
+<span class="n">x_new</span> <span class="o">=</span> <span class="p">[[</span><span class="mf">5.0</span><span class="p">,</span> <span class="mf">5.5</span><span class="p">,</span> <span class="mi">2</span><span class="p">]]</span>
+
+<span class="c1"># Melakukan prediksi untuk data baru</span>
+<span class="n">y_new_pred</span> <span class="o">=</span> <span class="n">knn</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">x_new</span><span class="p">)</span>
+<span class="k">if</span> <span class="n">y_new_pred</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Prediction for new data: </span><span class="si">{</span><span class="n">y_new_pred</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">}</span><span class="s2"> (Tidak Ada Land Mines)&quot;</span><span class="p">)</span>
+<span class="k">elif</span> <span class="n">y_new_pred</span> <span class="o">==</span> <span class="mi">2</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Prediction for new data: </span><span class="si">{</span><span class="n">y_new_pred</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">}</span><span class="s2"> (Anti tank)&quot;</span><span class="p">)</span>
+<span class="k">elif</span> <span class="n">y_new_pred</span> <span class="o">==</span> <span class="mi">3</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Prediction for new data: </span><span class="si">{</span><span class="n">y_new_pred</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">}</span><span class="s2"> (Anti Presonnel)&quot;</span><span class="p">)</span>
+<span class="k">elif</span> <span class="n">y_new_pred</span> <span class="o">==</span> <span class="mi">4</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Prediction for new data: </span><span class="si">{</span><span class="n">y_new_pred</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">}</span><span class="s2"> (Bobby Trapped Anti Presonnel)&quot;</span><span class="p">)</span>
+<span class="k">elif</span> <span class="n">y_new_pred</span> <span class="o">==</span> <span class="mi">5</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Prediction for new data: </span><span class="si">{</span><span class="n">y_new_pred</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">}</span><span class="s2"> (M14 Anti-personnel)&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Accuracy: </span><span class="si">{</span><span class="n">accuracy</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Accuracy: </span><span class="si">{</span><span class="n">accuracy</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">100</span><span class="si">:</span><span class="s1">.2f</span><span class="si">}</span><span class="s1">%&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Prediction for new data: 2 (Anti tank)
+Accuracy: 0.4918032786885246
+Accuracy: 49.18%
+/shared-libs/python3.9/py/lib/python3.9/site-packages/sklearn/base.py:450: UserWarning: X does not have valid feature names, but KNeighborsClassifier was fitted with feature names
+  warnings.warn(
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="gaussian-naive-bayes-classification">
+<h2>Gaussian Naive Bayes Classification<a class="headerlink" href="#gaussian-naive-bayes-classification" title="Link to this heading">#</a></h2>
+<p>Gaussian Naive Bayes adalah jenis metode Naive Bayes yang mempertimbangkan atribut kontinu dan fitur data mengikuti distribusi Gaussian di seluruh kumpulan data. Dalam terminologi perpustakaan Sklearn, Gaussian Naive Bayes adalah jenis algoritma klasifikasi yang bekerja pada fitur terdistribusi normal berkelanjutan yang didasarkan pada algoritma Naive Bayes.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.naive_bayes</span> <span class="kn">import</span> <span class="n">GaussianNB</span>
+
+<span class="c1"># Membaca data dari file CSV</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;data-cleaned.csv&#39;</span><span class="p">)</span>
+
+<span class="c1"># Memisahkan fitur dan target</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">df</span><span class="p">[[</span><span class="s1">&#39;V&#39;</span><span class="p">,</span> <span class="s1">&#39;H&#39;</span><span class="p">,</span> <span class="s1">&#39;S&#39;</span><span class="p">]]</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;M&#39;</span><span class="p">]</span>
+
+<span class="c1"># Melakukan train-test split</span>
+<span class="n">x_train</span><span class="p">,</span> <span class="n">x_test</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_test</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">test_size</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">50</span><span class="p">)</span>
+
+<span class="c1"># Melatih model Naive Bayes</span>
+<span class="n">nb</span> <span class="o">=</span> <span class="n">GaussianNB</span><span class="p">()</span>
+<span class="n">nb</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">x_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
+
+<span class="c1"># Menghitung akurasi model pada data uji</span>
+<span class="n">y_test_pred</span> <span class="o">=</span> <span class="n">nb</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">x_test</span><span class="p">)</span>
+<span class="n">accuracy</span> <span class="o">=</span> <span class="n">accuracy_score</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_test_pred</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Accuracy: </span><span class="si">{</span><span class="n">accuracy</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="c1"># Membuat data baru untuk prediksi</span>
+<span class="n">x_new</span> <span class="o">=</span> <span class="p">[[</span><span class="mf">5.0</span><span class="p">,</span> <span class="mf">5.5</span><span class="p">,</span> <span class="mi">2</span><span class="p">]]</span>
+
+<span class="c1"># Melakukan prediksi untuk data baru</span>
+<span class="n">y_new_pred</span> <span class="o">=</span> <span class="n">nb</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">x_new</span><span class="p">)</span>
+<span class="k">if</span> <span class="n">y_new_pred</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Prediction for new data: </span><span class="si">{</span><span class="n">y_new_pred</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">}</span><span class="s2"> (Tidak Ada Land Mines)&quot;</span><span class="p">)</span>
+<span class="k">elif</span> <span class="n">y_new_pred</span> <span class="o">==</span> <span class="mi">2</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Prediction for new data: </span><span class="si">{</span><span class="n">y_new_pred</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">}</span><span class="s2"> (Anti tank)&quot;</span><span class="p">)</span>
+<span class="k">elif</span> <span class="n">y_new_pred</span> <span class="o">==</span> <span class="mi">3</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Prediction for new data: </span><span class="si">{</span><span class="n">y_new_pred</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">}</span><span class="s2"> (Anti Presonnel)&quot;</span><span class="p">)</span>
+<span class="k">elif</span> <span class="n">y_new_pred</span> <span class="o">==</span> <span class="mi">4</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Prediction for new data: </span><span class="si">{</span><span class="n">y_new_pred</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">}</span><span class="s2"> (Bobby Trapped Anti Presonnel)&quot;</span><span class="p">)</span>
+<span class="k">elif</span> <span class="n">y_new_pred</span> <span class="o">==</span> <span class="mi">5</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Prediction for new data: </span><span class="si">{</span><span class="n">y_new_pred</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">}</span><span class="s2"> (M14 Anti-personnel)&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Accuracy: </span><span class="si">{</span><span class="n">accuracy</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">100</span><span class="si">:</span><span class="s1">.2f</span><span class="si">}</span><span class="s1">%&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Accuracy: 0.5081967213114754
+Prediction for new data: 2 (Anti tank)
+Accuracy: 50.82%
+/shared-libs/python3.9/py/lib/python3.9/site-packages/sklearn/base.py:450: UserWarning: X does not have valid feature names, but GaussianNB was fitted with feature names
+  warnings.warn(
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="stacking-classifier">
+<h2>Stacking Classifier<a class="headerlink" href="#stacking-classifier" title="Link to this heading">#</a></h2>
+<p>Stacking classifier adalah metode ensemble learning di mana beberapa model (classifier) digunakan untuk menggabungkan prediksi mereka. Prosesnya melibatkan dua tahap utama:</p>
+<ul class="simple">
+<li><p>Pembuatan Prediksi: Beberapa model classifier yang berbeda digunakan untuk membuat prediksi pada dataset yang sama.</p></li>
+</ul>
+<ul class="simple">
+<li><p>Penggabungan Prediksi: Prediksi yang dihasilkan oleh model-model tersebut digunakan sebagai input untuk model lain (meta-classifier) yang kemudian memberikan output akhir.</p></li>
+</ul>
+<p>Proses ini membantu meningkatkan kinerja prediksi dibandingkan dengan menggunakan model tunggal karena memanfaatkan kekuatan berbagai jenis model. Meta-classifier dapat menggunakan model yang lebih kompleks atau lebih sederhana, seperti logistic regression, untuk menggabungkan prediksi dari model-model pendukungnya.</p>
+<p>Dengan cara ini, stacking classifier mampu menangani lebih baik berbagai jenis masalah prediksi, meminimalkan kelemahan dari setiap model tunggal, dan meningkatkan keakuratan serta keandalan prediksi.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.ensemble</span> <span class="kn">import</span> <span class="n">StackingClassifier</span>
+<span class="kn">from</span> <span class="nn">sklearn.linear_model</span> <span class="kn">import</span> <span class="n">LogisticRegression</span>
+
+<span class="c1"># Membaca data dari file CSV</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;data-cleaned.csv&#39;</span><span class="p">)</span>
+
+<span class="c1"># Memisahkan fitur dan target</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">df</span><span class="p">[[</span><span class="s1">&#39;V&#39;</span><span class="p">,</span> <span class="s1">&#39;H&#39;</span><span class="p">,</span> <span class="s1">&#39;S&#39;</span><span class="p">]]</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;M&#39;</span><span class="p">]</span>
+
+<span class="c1"># Melakukan train-test split</span>
+<span class="n">x_train</span><span class="p">,</span> <span class="n">x_test</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_test</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">test_size</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">50</span><span class="p">)</span>
+
+<span class="c1"># Mendefinisikan base models</span>
+<span class="n">base_models</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="p">(</span><span class="s1">&#39;knn3&#39;</span><span class="p">,</span> <span class="n">KNeighborsClassifier</span><span class="p">(</span><span class="n">n_neighbors</span><span class="o">=</span><span class="mi">3</span><span class="p">)),</span>
+    <span class="p">(</span><span class="s1">&#39;knn5&#39;</span><span class="p">,</span> <span class="n">KNeighborsClassifier</span><span class="p">(</span><span class="n">n_neighbors</span><span class="o">=</span><span class="mi">5</span><span class="p">)),</span>
+    <span class="p">(</span><span class="s1">&#39;nb&#39;</span><span class="p">,</span> <span class="n">GaussianNB</span><span class="p">())</span>
+<span class="p">]</span>
+
+<span class="c1"># Mendefinisikan meta model</span>
+<span class="n">meta_model</span> <span class="o">=</span> <span class="n">LogisticRegression</span><span class="p">()</span>
+
+<span class="c1"># Membuat stacking classifier</span>
+<span class="n">stacking_clf</span> <span class="o">=</span> <span class="n">StackingClassifier</span><span class="p">(</span><span class="n">estimators</span><span class="o">=</span><span class="n">base_models</span><span class="p">,</span> <span class="n">final_estimator</span><span class="o">=</span><span class="n">meta_model</span><span class="p">)</span>
+
+<span class="c1"># Melatih stacking classifier</span>
+<span class="n">stacking_clf</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">x_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
+
+<span class="c1"># Menghitung akurasi model pada data uji</span>
+<span class="n">y_test_pred</span> <span class="o">=</span> <span class="n">stacking_clf</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">x_test</span><span class="p">)</span>
+<span class="n">accuracy</span> <span class="o">=</span> <span class="n">accuracy_score</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_test_pred</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Accuracy: </span><span class="si">{</span><span class="n">accuracy</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="c1"># Membuat data baru untuk prediksi</span>
+<span class="n">x_new</span> <span class="o">=</span> <span class="p">[[</span><span class="mf">5.0</span><span class="p">,</span> <span class="mf">5.5</span><span class="p">,</span> <span class="mi">2</span><span class="p">]]</span>
+
+<span class="c1"># Melakukan prediksi untuk data baru</span>
+<span class="n">y_new_pred</span> <span class="o">=</span> <span class="n">stacking_clf</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">x_new</span><span class="p">)</span>
+<span class="k">if</span> <span class="n">y_new_pred</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Prediction for new data: </span><span class="si">{</span><span class="n">y_new_pred</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">}</span><span class="s2"> (Tidak Ada Land Mines)&quot;</span><span class="p">)</span>
+<span class="k">elif</span> <span class="n">y_new_pred</span> <span class="o">==</span> <span class="mi">2</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Prediction for new data: </span><span class="si">{</span><span class="n">y_new_pred</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">}</span><span class="s2"> (Anti tank)&quot;</span><span class="p">)</span>
+<span class="k">elif</span> <span class="n">y_new_pred</span> <span class="o">==</span> <span class="mi">3</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Prediction for new data: </span><span class="si">{</span><span class="n">y_new_pred</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">}</span><span class="s2"> (Anti Presonnel)&quot;</span><span class="p">)</span>
+<span class="k">elif</span> <span class="n">y_new_pred</span> <span class="o">==</span> <span class="mi">4</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Prediction for new data: </span><span class="si">{</span><span class="n">y_new_pred</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">}</span><span class="s2"> (Bobby Trapped Anti Presonnel)&quot;</span><span class="p">)</span>
+<span class="k">elif</span> <span class="n">y_new_pred</span> <span class="o">==</span> <span class="mi">5</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Prediction for new data: </span><span class="si">{</span><span class="n">y_new_pred</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">}</span><span class="s2"> (M14 Anti-personnel)&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Accuracy: </span><span class="si">{</span><span class="n">accuracy</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">100</span><span class="si">:</span><span class="s1">.2f</span><span class="si">}</span><span class="s1">%&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Accuracy: 0.5573770491803278
+Prediction for new data: 2 (Anti tank)
+Accuracy: 55.74%
+/shared-libs/python3.9/py/lib/python3.9/site-packages/sklearn/base.py:450: UserWarning: X does not have valid feature names, but KNeighborsClassifier was fitted with feature names
+  warnings.warn(
+/shared-libs/python3.9/py/lib/python3.9/site-packages/sklearn/base.py:450: UserWarning: X does not have valid feature names, but KNeighborsClassifier was fitted with feature names
+  warnings.warn(
+/shared-libs/python3.9/py/lib/python3.9/site-packages/sklearn/base.py:450: UserWarning: X does not have valid feature names, but GaussianNB was fitted with feature names
+  warnings.warn(
+</pre></div>
+</div>
+</div>
+</div>
+<p>dari hasil diatas bisa kita lihat bahwa akurasi yang diberikan menggunakan metode stacking ini memiliki akurasi yang terbilang kecil. prediksi yang diberikan adalah 2 dengan akurasinya adalah 55.74%.</p>
+</section>
+<section id="bagging-classifier">
+<h2>Bagging Classifier<a class="headerlink" href="#bagging-classifier" title="Link to this heading">#</a></h2>
+<p>Bagging (Bootstrap Aggregating) classifier adalah metode ensemble learning di mana banyak model (biasanya model decision tree) digunakan untuk membuat prediksi. Prosesnya melibatkan beberapa tahap utama:</p>
+<ul class="simple">
+<li><p>Pembuatan Sampel Bootstrap: Data pelatihan dibagi menjadi beberapa sampel bootstrap, yaitu sampel acak dengan penggantian dari data pelatihan asli.</p></li>
+</ul>
+<ul class="simple">
+<li><p>Pembuatan Model: Pada setiap sampel bootstrap, model decision tree (atau model lainnya) dibangun.</p></li>
+</ul>
+<ul class="simple">
+<li><p>Penggabungan Prediksi: Prediksi dari semua model tersebut digabungkan dengan metode voting (pada klasifikasi) atau rata-rata (pada regresi) untuk menghasilkan prediksi akhir.</p></li>
+</ul>
+<p>Keuntungan utama dari bagging classifier adalah mengurangi varian dari model tunggal dengan menggabungkan hasil dari beberapa model, yang pada akhirnya dapat menghasilkan model yang lebih stabil dan dapat diandalkan. Metode ini sering digunakan dalam aplikasi machine learning untuk meningkatkan kinerja prediksi, terutama pada dataset yang besar dan kompleks.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.ensemble</span> <span class="kn">import</span> <span class="n">BaggingClassifier</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="c1"># Membaca data dari file CSV</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;data-cleaned.csv&#39;</span><span class="p">)</span>
+
+<span class="c1"># Memisahkan fitur dan target</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">df</span><span class="p">[[</span><span class="s1">&#39;V&#39;</span><span class="p">,</span> <span class="s1">&#39;H&#39;</span><span class="p">,</span> <span class="s1">&#39;S&#39;</span><span class="p">]]</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;M&#39;</span><span class="p">]</span>
+
+<span class="c1"># Melakukan train-test split</span>
+<span class="n">x_train</span><span class="p">,</span> <span class="n">x_test</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_test</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">test_size</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">50</span><span class="p">)</span>
+
+<span class="c1"># Membuat base model Naive Bayes</span>
+<span class="n">base_model</span> <span class="o">=</span> <span class="n">GaussianNB</span><span class="p">()</span>
+
+<span class="c1"># Membuat bagging classifier dengan base model Naive Bayes</span>
+<span class="n">bagging_clf</span> <span class="o">=</span> <span class="n">BaggingClassifier</span><span class="p">(</span><span class="n">base_estimator</span><span class="o">=</span><span class="n">base_model</span><span class="p">,</span> <span class="n">n_estimators</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">50</span><span class="p">)</span>
+
+<span class="c1"># Melatih bagging classifier</span>
+<span class="n">bagging_clf</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">x_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
+
+<span class="c1"># Menghitung akurasi model pada data uji</span>
+<span class="n">y_test_pred</span> <span class="o">=</span> <span class="n">bagging_clf</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">x_test</span><span class="p">)</span>
+<span class="n">accuracy</span> <span class="o">=</span> <span class="n">accuracy_score</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_test_pred</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Accuracy: </span><span class="si">{</span><span class="n">accuracy</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="c1"># Melakukan prediksi untuk data baru</span>
+<span class="n">y_new_pred</span> <span class="o">=</span> <span class="n">bagging_clf</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">x_test</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Accuracy: </span><span class="si">{</span><span class="n">accuracy</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">100</span><span class="si">:</span><span class="s1">.2f</span><span class="si">}</span><span class="s1">%&#39;</span><span class="p">)</span>
+
+<span class="c1"># Visualisasi dengan Matplotlib</span>
+<span class="n">accuracies</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="c1"># Melatih model beberapa kali untuk mendapatkan distribusi akurasi</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">100</span><span class="p">):</span>
+    <span class="n">x_train</span><span class="p">,</span> <span class="n">x_test</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_test</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">test_size</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="n">i</span><span class="p">)</span>
+    <span class="n">bagging_clf</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">x_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
+    <span class="n">y_test_pred</span> <span class="o">=</span> <span class="n">bagging_clf</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">x_test</span><span class="p">)</span>
+    <span class="n">acc</span> <span class="o">=</span> <span class="n">accuracy_score</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_test_pred</span><span class="p">)</span>
+    <span class="n">accuracies</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">acc</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Iteration </span><span class="si">{</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="si">}</span><span class="s2">: Accuracy = </span><span class="si">{</span><span class="n">acc</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="c1"># Menampilkan histogram akurasi</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">accuracies</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;skyblue&#39;</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Distribution of Model Accuracies&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Accuracy&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Frequency&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Accuracy: 0.45901639344262296
+Accuracy: 45.90%
+Iteration 1: Accuracy = 0.3770
+Iteration 2: Accuracy = 0.5082
+Iteration 3: Accuracy = 0.4098
+Iteration 4: Accuracy = 0.4262
+Iteration 5: Accuracy = 0.5082
+Iteration 6: Accuracy = 0.5246
+Iteration 7: Accuracy = 0.3934
+Iteration 8: Accuracy = 0.4098
+Iteration 9: Accuracy = 0.3115
+Iteration 10: Accuracy = 0.4262
+Iteration 11: Accuracy = 0.3279
+Iteration 12: Accuracy = 0.4426
+Iteration 13: Accuracy = 0.4590
+Iteration 14: Accuracy = 0.3443
+Iteration 15: Accuracy = 0.4098
+Iteration 16: Accuracy = 0.3443
+Iteration 17: Accuracy = 0.4754
+Iteration 18: Accuracy = 0.3279
+Iteration 19: Accuracy = 0.4426
+Iteration 20: Accuracy = 0.6066
+Iteration 21: Accuracy = 0.4262
+Iteration 22: Accuracy = 0.4098
+Iteration 23: Accuracy = 0.3443
+Iteration 24: Accuracy = 0.4426
+Iteration 25: Accuracy = 0.4098
+Iteration 26: Accuracy = 0.4262
+Iteration 27: Accuracy = 0.5082
+Iteration 28: Accuracy = 0.5410
+Iteration 29: Accuracy = 0.4098
+Iteration 30: Accuracy = 0.4590
+Iteration 31: Accuracy = 0.4426
+Iteration 32: Accuracy = 0.4098
+Iteration 33: Accuracy = 0.4590
+Iteration 34: Accuracy = 0.4262
+Iteration 35: Accuracy = 0.3770
+Iteration 36: Accuracy = 0.4426
+Iteration 37: Accuracy = 0.5410
+Iteration 38: Accuracy = 0.4918
+Iteration 39: Accuracy = 0.4262
+Iteration 40: Accuracy = 0.4590
+Iteration 41: Accuracy = 0.3934
+Iteration 42: Accuracy = 0.4098
+Iteration 43: Accuracy = 0.4262
+Iteration 44: Accuracy = 0.4262
+Iteration 45: Accuracy = 0.4262
+Iteration 46: Accuracy = 0.4098
+Iteration 47: Accuracy = 0.5082
+Iteration 48: Accuracy = 0.5410
+Iteration 49: Accuracy = 0.3770
+Iteration 50: Accuracy = 0.5246
+Iteration 51: Accuracy = 0.4590
+Iteration 52: Accuracy = 0.4426
+Iteration 53: Accuracy = 0.3443
+Iteration 54: Accuracy = 0.3279
+Iteration 55: Accuracy = 0.2951
+Iteration 56: Accuracy = 0.4590
+Iteration 57: Accuracy = 0.3770
+Iteration 58: Accuracy = 0.4098
+Iteration 59: Accuracy = 0.4426
+Iteration 60: Accuracy = 0.4590
+Iteration 61: Accuracy = 0.3770
+Iteration 62: Accuracy = 0.3770
+Iteration 63: Accuracy = 0.4590
+Iteration 64: Accuracy = 0.4262
+Iteration 65: Accuracy = 0.4098
+Iteration 66: Accuracy = 0.5738
+Iteration 67: Accuracy = 0.4754
+Iteration 68: Accuracy = 0.4918
+Iteration 69: Accuracy = 0.3934
+Iteration 70: Accuracy = 0.5410
+Iteration 71: Accuracy = 0.4262
+Iteration 72: Accuracy = 0.5246
+Iteration 73: Accuracy = 0.4426
+Iteration 74: Accuracy = 0.4426
+Iteration 75: Accuracy = 0.3443
+Iteration 76: Accuracy = 0.5246
+Iteration 77: Accuracy = 0.3934
+Iteration 78: Accuracy = 0.4754
+Iteration 79: Accuracy = 0.4426
+Iteration 80: Accuracy = 0.4426
+Iteration 81: Accuracy = 0.3934
+Iteration 82: Accuracy = 0.5410
+Iteration 83: Accuracy = 0.4754
+Iteration 84: Accuracy = 0.4918
+Iteration 85: Accuracy = 0.3934
+Iteration 86: Accuracy = 0.4590
+Iteration 87: Accuracy = 0.5738
+Iteration 88: Accuracy = 0.4590
+Iteration 89: Accuracy = 0.4918
+Iteration 90: Accuracy = 0.4098
+Iteration 91: Accuracy = 0.3607
+Iteration 92: Accuracy = 0.4426
+Iteration 93: Accuracy = 0.5738
+Iteration 94: Accuracy = 0.4426
+Iteration 95: Accuracy = 0.4918
+Iteration 96: Accuracy = 0.4590
+Iteration 97: Accuracy = 0.4262
+Iteration 98: Accuracy = 0.4426
+Iteration 99: Accuracy = 0.3934
+Iteration 100: Accuracy = 0.4590
+</pre></div>
+</div>
+<a class="reference internal image-reference" href="_images/b8b24c666f61046767c64e656e8bc5d4bc4a606c16fbffb8b53d73494c6d95f1.png"><img alt="_images/b8b24c666f61046767c64e656e8bc5d4bc4a606c16fbffb8b53d73494c6d95f1.png" src="_images/b8b24c666f61046767c64e656e8bc5d4bc4a606c16fbffb8b53d73494c6d95f1.png" style="width: 841px; height: 547px;" /></a>
+</div>
+</div>
+<p>bisa kita lihat akurasi yang paling sering muncul dari metode bagging adalah 0.45 atau 45.90%. akurasi ini bisa dibilang memiliki nilai yang cukup kecil untuk memprediksi suatu data baru.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;data-cleaned.csv&#39;</span><span class="p">)</span>
+
+<span class="c1"># Memisahkan fitur dan target</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">df</span><span class="p">[[</span><span class="s1">&#39;V&#39;</span><span class="p">,</span> <span class="s1">&#39;H&#39;</span><span class="p">,</span> <span class="s1">&#39;S&#39;</span><span class="p">]]</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;M&#39;</span><span class="p">]</span>
+
+<span class="c1"># Melakukan train-test split</span>
+<span class="n">x_train</span><span class="p">,</span> <span class="n">x_test</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_test</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">test_size</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">50</span><span class="p">)</span>
+
+<span class="c1"># Membuat base model Naive Bayes</span>
+<span class="n">base_model</span> <span class="o">=</span> <span class="n">GaussianNB</span><span class="p">()</span>
+
+<span class="c1"># Membuat bagging classifier dengan base model Naive Bayes</span>
+<span class="n">bagging_clf</span> <span class="o">=</span> <span class="n">BaggingClassifier</span><span class="p">(</span><span class="n">base_estimator</span><span class="o">=</span><span class="n">base_model</span><span class="p">,</span> <span class="n">n_estimators</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">50</span><span class="p">)</span>
+
+<span class="c1"># Melatih bagging classifier</span>
+<span class="n">bagging_clf</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">x_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
+
+<span class="c1"># Menghitung akurasi model pada data uji</span>
+<span class="n">y_test_pred</span> <span class="o">=</span> <span class="n">bagging_clf</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">x_test</span><span class="p">)</span>
+<span class="n">accuracy</span> <span class="o">=</span> <span class="n">accuracy_score</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_test_pred</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Accuracy: </span><span class="si">{</span><span class="n">accuracy</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="c1"># Membuat data baru untuk prediksi</span>
+<span class="n">x_new</span> <span class="o">=</span> <span class="p">[[</span><span class="mf">5.0</span><span class="p">,</span> <span class="mf">5.5</span><span class="p">,</span> <span class="mi">2</span><span class="p">]]</span>
+
+<span class="c1"># Melakukan prediksi untuk data baru</span>
+<span class="n">y_new_pred</span> <span class="o">=</span> <span class="n">bagging_clf</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">x_new</span><span class="p">)</span>
+<span class="k">if</span> <span class="n">y_new_pred</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Prediction for new data: </span><span class="si">{</span><span class="n">y_new_pred</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">}</span><span class="s2"> (Tidak Ada Land Mines)&quot;</span><span class="p">)</span>
+<span class="k">elif</span> <span class="n">y_new_pred</span> <span class="o">==</span> <span class="mi">2</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Prediction for new data: </span><span class="si">{</span><span class="n">y_new_pred</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">}</span><span class="s2"> (Anti tank)&quot;</span><span class="p">)</span>
+<span class="k">elif</span> <span class="n">y_new_pred</span> <span class="o">==</span> <span class="mi">3</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Prediction for new data: </span><span class="si">{</span><span class="n">y_new_pred</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">}</span><span class="s2"> (Anti Presonnel)&quot;</span><span class="p">)</span>
+<span class="k">elif</span> <span class="n">y_new_pred</span> <span class="o">==</span> <span class="mi">4</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Prediction for new data: </span><span class="si">{</span><span class="n">y_new_pred</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">}</span><span class="s2"> (Bobby Trapped Anti Presonnel)&quot;</span><span class="p">)</span>
+<span class="k">elif</span> <span class="n">y_new_pred</span> <span class="o">==</span> <span class="mi">5</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Prediction for new data: </span><span class="si">{</span><span class="n">y_new_pred</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">}</span><span class="s2"> (M14 Anti-personnel)&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Accuracy: </span><span class="si">{</span><span class="n">accuracy</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">100</span><span class="si">:</span><span class="s1">.2f</span><span class="si">}</span><span class="s1">%&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Accuracy: 0.45901639344262296
+Prediction for new data: 2 (Anti tank)
+Accuracy: 45.90%
+/shared-libs/python3.9/py/lib/python3.9/site-packages/sklearn/base.py:450: UserWarning: X does not have valid feature names, but BaggingClassifier was fitted with feature names
+  warnings.warn(
+</pre></div>
+</div>
+</div>
+</div>
+<p>prediksi yang diberikan dengan menggunakan metode ini adalah 2 atau tipe land mines yang terdeteksi adalah tipe land mine Anti Tank</p>
+<a style='text-decoration:none;line-height:16px;display:flex;color:#5B5B62;padding:10px;justify-content:end;' href='https://deepnote.com?utm_source=created-in-deepnote-cell&projectId=10945847-e31e-4133-a073-8fa6c5986d5c' target="_blank">
+<img alt='Created in deepnote.com' style='display:inline;max-height:16px;margin:0px;margin-right:7.5px;' src='data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB3aWR0aD0iODBweCIgaGVpZ2h0PSI4MHB4IiB2aWV3Qm94PSIwIDAgODAgODAiIHZlcnNpb249IjEuMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayI+CiAgICA8IS0tIEdlbmVyYXRvcjogU2tldGNoIDU0LjEgKDc2NDkwKSAtIGh0dHBzOi8vc2tldGNoYXBwLmNvbSAtLT4KICAgIDx0aXRsZT5Hcm91cCAzPC90aXRsZT4KICAgIDxkZXNjPkNyZWF0ZWQgd2l0aCBTa2V0Y2guPC9kZXNjPgogICAgPGcgaWQ9IkxhbmRpbmciIHN0cm9rZT0ibm9uZSIgc3Ryb2tlLXdpZHRoPSIxIiBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPgogICAgICAgIDxnIGlkPSJBcnRib2FyZCIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoLTEyMzUuMDAwMDAwLCAtNzkuMDAwMDAwKSI+CiAgICAgICAgICAgIDxnIGlkPSJHcm91cC0zIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgxMjM1LjAwMDAwMCwgNzkuMDAwMDAwKSI+CiAgICAgICAgICAgICAgICA8cG9seWdvbiBpZD0iUGF0aC0yMCIgZmlsbD0iIzAyNjVCNCIgcG9pbnRzPSIyLjM3NjIzNzYyIDgwIDM4LjA0NzY2NjcgODAgNTcuODIxNzgyMiA3My44MDU3NTkyIDU3LjgyMTc4MjIgMzIuNzU5MjczOSAzOS4xNDAyMjc4IDMxLjY4MzE2ODMiPjwvcG9seWdvbj4KICAgICAgICAgICAgICAgIDxwYXRoIGQ9Ik0zNS4wMDc3MTgsODAgQzQyLjkwNjIwMDcsNzYuNDU0OTM1OCA0Ny41NjQ5MTY3LDcxLjU0MjI2NzEgNDguOTgzODY2LDY1LjI2MTk5MzkgQzUxLjExMjI4OTksNTUuODQxNTg0MiA0MS42NzcxNzk1LDQ5LjIxMjIyODQgMjUuNjIzOTg0Niw0OS4yMTIyMjg0IEMyNS40ODQ5Mjg5LDQ5LjEyNjg0NDggMjkuODI2MTI5Niw0My4yODM4MjQ4IDM4LjY0NzU4NjksMzEuNjgzMTY4MyBMNzIuODcxMjg3MSwzMi41NTQ0MjUgTDY1LjI4MDk3Myw2Ny42NzYzNDIxIEw1MS4xMTIyODk5LDc3LjM3NjE0NCBMMzUuMDA3NzE4LDgwIFoiIGlkPSJQYXRoLTIyIiBmaWxsPSIjMDAyODY4Ij48L3BhdGg+CiAgICAgICAgICAgICAgICA8cGF0aCBkPSJNMCwzNy43MzA0NDA1IEwyNy4xMTQ1MzcsMC4yNTcxMTE0MzYgQzYyLjM3MTUxMjMsLTEuOTkwNzE3MDEgODAsMTAuNTAwMzkyNyA4MCwzNy43MzA0NDA1IEM4MCw2NC45NjA0ODgyIDY0Ljc3NjUwMzgsNzkuMDUwMzQxNCAzNC4zMjk1MTEzLDgwIEM0Ny4wNTUzNDg5LDc3LjU2NzA4MDggNTMuNDE4MjY3Nyw3MC4zMTM2MTAzIDUzLjQxODI2NzcsNTguMjM5NTg4NSBDNTMuNDE4MjY3Nyw0MC4xMjg1NTU3IDM2LjMwMzk1NDQsMzcuNzMwNDQwNSAyNS4yMjc0MTcsMzcuNzMwNDQwNSBDMTcuODQzMDU4NiwzNy43MzA0NDA1IDkuNDMzOTE5NjYsMzcuNzMwNDQwNSAwLDM3LjczMDQ0MDUgWiIgaWQ9IlBhdGgtMTkiIGZpbGw9IiMzNzkzRUYiPjwvcGF0aD4KICAgICAgICAgICAgPC9nPgogICAgICAgIDwvZz4KICAgIDwvZz4KPC9zdmc+' > </img>
+Created in <span style='font-weight:600;margin-left:4px;'>Deepnote</span></a></section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="notebooks.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Content with notebooks</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="markdown-notebooks.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Notebooks with MyST Markdown</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Studi Kasus Deteksi Ranjau Darat</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#tujuan-analisis">Tujuan Analisis</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#data-understanding">Data Understanding</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#deskripsi-data">Deskripsi Data</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#penjelasan-land-mines">Penjelasan Land Mines</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#menampilkan-data-dari-uci-dataset">Menampilkan data dari uci dataset</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#fitur">Fitur</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#penjelasan-class">Penjelasan Class</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#identifikasi-kualitas-data">Identifikasi kualitas data</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cek-missing-values">Cek Missing Values</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#identifikasi-outlier">Identifikasi Outlier</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#pre-processing-data">PRE-PROCESSING DATA</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#menghapus-data-outlier">Menghapus data outlier</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#modelling">Modelling</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#k-nearest-neighbor-knn">K-Nearest Neighbor (KNN)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gaussian-naive-bayes-classification">Gaussian Naive Bayes Classification</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#stacking-classifier">Stacking Classifier</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bagging-classifier">Bagging Classifier</a></li>
+</ul>
+</li>
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By The Jupyter Book Community
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=3ee479438cf8b5e0d341"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=3ee479438cf8b5e0d341"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
